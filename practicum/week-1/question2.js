@@ -32,10 +32,15 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
                         }
                 }
         }
+        if(tempCookies != 0){
+                return false;
+
+        }
         for(var k = 0; k < tempCookies.length; k++){
                 if(tempCookies[k] != findMax){
                         return false;
                 }
         }
+        
         return true;
  };
