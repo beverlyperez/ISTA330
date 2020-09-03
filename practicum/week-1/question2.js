@@ -13,6 +13,7 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
         var findMax = 0;
         var tempToSkip = 0;
         var tempExtraCookies = extraCookies;
+        var tempCookies = cookies;
         for(var i = 0; i < cookies.length; i++){
                 if(findMax < cookies[i]){
                         findMax = cookies[i];
@@ -27,14 +28,14 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
                                 if(cookies[j] != findMax){
                                         var temp = cookies[j];
                                         var leftoverToMakeEqual = findMax - temp;
-                                        cookies[j] = temp + leftoverToMakeEqual;
-                                        console.log("Total in cookies[j] = " + cookies[j]);
+                                        tempCookies[j] = temp + leftoverToMakeEqual;
+                                        console.log("Total in cookies[j] = " + tempCookies[j]);
                                 }
                         }
                 }
         }
         for(var k = 0; k < cookies.length; k++){
-                if(cookies[k] != findMax){
+                if(tempCookies[k] != findMax){
                         return false;
                 }
         }
