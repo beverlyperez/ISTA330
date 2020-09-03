@@ -20,21 +20,19 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
                         tempToSkip = i;
                 }
         }
-        console.log("This is max = " + findMax);
 
-        for(var j = 0; j < cookies.length; j++){
+        for(var j = 0; j < tempCookies.length; j++){
                 if(j != tempToSkip){
                         if(tempExtraCookies != 0){
-                                if(cookies[j] != findMax){
-                                        var temp = cookies[j];
+                                if(tempCookies[j] != findMax){
+                                        var temp = tempCookies[j];
                                         var leftoverToMakeEqual = findMax - temp;
                                         tempCookies[j] = temp + leftoverToMakeEqual;
-                                        console.log("Total in cookies[j] = " + tempCookies[j]);
                                 }
                         }
                 }
         }
-        for(var k = 0; k < cookies.length; k++){
+        for(var k = 0; k < tempCookies.length; k++){
                 if(tempCookies[k] != findMax){
                         return false;
                 }
