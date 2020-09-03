@@ -10,6 +10,33 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
  */
 
  var canGetEqualCookies = function(cookies, extraCookies) {
-     
-    
+        var findMax = 0;
+        var tempToSkip = 0;
+        var tempExtraCookies = extraCookies;
+        for(var i = 0; i < cookies.length; i++){
+                if(findMax < cookies[i]){
+                        findMax = cookies[i];
+                        tempToSkip = i;
+                }
+        }
+        console.log("This is max = " + findMax);
+
+        for(var j = 0; j < cookies.length; j++){
+                if(j != tempToSkip){
+                        if(tempExtraCookies != 0){
+                                if(cookies[j] != findMax){
+                                        var temp = cookies[j];
+                                        var leftoverToMakeEqual = findMax - temp;
+                                        cookies[j] = temp + leftoverToMakeEqual;
+                                        console.log("Total in cookies[j] = " + cookies[j]);
+                                }
+                        }
+                }
+        }
+        for(var k = 0; k < cookies.length; k++){
+                if(cookies[k] != findMax){
+                        return false;
+                }
+        }
+        return true;
  };
