@@ -44,6 +44,3 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
         
         return true;
  };
- 
- var output = canGetEqualCookies([6, 6, 6], 6);
-console.log(output);
