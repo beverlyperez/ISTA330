@@ -22,8 +22,9 @@ var howManyCommon = function(A, B) {
         longestLength = B;
         shorterLen = A;
     }
-    for(var i = 0; i < shorterLen; i++){
-        for(var j = 0; j < longestLength; j++){
+    for(var i = 0; i < shorterLen.length; i++){
+        for(var j = 0; j < longestLength.length; j++){
+            console.log(shorterLen[i] + " this is the shorter length == " + longestLength[j] + " <--longest length ");
             if(shorterLen[i] === longestLength[j]){
                 commonOnes++;
             }
