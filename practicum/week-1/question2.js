@@ -29,6 +29,7 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
                                         var leftoverToMakeEqual = findMax - temp;
                                         tempCookies[j] = temp + leftoverToMakeEqual;
                                         tempExtraCookies = tempExtraCookies - leftoverToMakeEqual;
+
                                 }
                         }
                 }
