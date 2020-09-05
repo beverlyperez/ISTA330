@@ -12,11 +12,23 @@ output: 3
 */
 
 var minimalReduction = function(n) {
-    var numToDivBy;
-    for(var i = 0; i < n.length; i++){
-        if(n % i == 0){
-            numToDivBy = i;
+    var numOfTimes = 0;
+    while(n != 0){
+        if(n % 4 == 0){
+            n = n - (n/4);
         }
+        else if(n % 3 == 0){
+            n = n - (n/3);
+        }
+        else{
+            n = n - 1;
+        }
+        console.log(n + " step " + numOfTimes);
+        numOfTimes++;
     }
+    return numOfTimes;
     
 };
+var output = minimalReduction(12);
+
+console.log(output);
