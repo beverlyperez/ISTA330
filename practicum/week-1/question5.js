@@ -30,6 +30,3 @@ var minimalReduction = function(n) {
     return numOfTimes;
     
 };
-var output = minimalReduction(19);
-
-console.log(output);
