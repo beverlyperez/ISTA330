@@ -13,3 +13,5 @@ Example: input: [-12,3,-1,5,-2,1,-7]
      
     
  };
+ var output = largestSubarray([-12,3,-1,5,-2,1,-7]);
+ console.log(output);
