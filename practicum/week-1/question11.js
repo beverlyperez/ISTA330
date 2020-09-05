@@ -10,5 +10,17 @@ output: [5, 5, 2, 2, 2, 2]
 */
 
 var decode = function(input) {
-
+    var keepTrack = 0;
+    var returnList = [];
+   
+    for(var i = 0; i < input.length; i++){
+        if(i % 2 == 0){
+            for(var j = 0; j < input[i]; j++){
+                
+                returnList[keepTrack] = input[i+1]
+                keepTrack++;
+            }
+        }
+    }
+    return returnList;
 };

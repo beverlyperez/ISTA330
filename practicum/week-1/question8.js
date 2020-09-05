@@ -23,6 +23,3 @@ var biggerAndEven = function(input) {
     }
     return returnList;
 };
-var output = biggerAndEven([1,3,4,2,6,8,5,7]);
-
-console.log(output);
