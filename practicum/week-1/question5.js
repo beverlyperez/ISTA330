@@ -13,12 +13,13 @@ output: 3
 
 var minimalReduction = function(n) {
     var numOfTimes = 0;
+    var temp = n;
     while(n != 0){
         if(n % 4 == 0){
-            n = n - (n/4);
+            n = n/4;
         }
         else if(n % 3 == 0){
-            n = n - (n/3);
+            n = n/3;
         }
         else{
             n = n - 1;
@@ -29,6 +30,6 @@ var minimalReduction = function(n) {
     return numOfTimes;
     
 };
-var output = minimalReduction(12);
+var output = minimalReduction(19);
 
 console.log(output);
