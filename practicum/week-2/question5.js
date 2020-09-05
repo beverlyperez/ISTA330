@@ -17,7 +17,26 @@ output: true
 */
 
 var isMonotonic = function(input) {
+    var isMonotoneInc = 0;
+    var isMonotoneDec = 0;
+    for(var i = 1; i < input.length; i++){
+        if(input[i-1] >= input[i]){
+            isMonotoneDec++;
+        }
+    }
+    
+    for(var j = 0; j < input.length; j++){
+        if(input[i-1] <= input[i]){
+            isMonotoneInc++;
+        }
+    }
+    if(isMonotoneDec == (input.length - 1)){
+        return true;
+    }
+    else if(isMonotoneInc == (input.length - 1)){
+        return true;
+    }
 
+
+    return false;
 };
-
-console.log('hi');
