@@ -13,5 +13,14 @@ output: [
 */
 
 var PascalTriangle = function(n) {
-
+  var keepTrackOfLen = 0;
+  while(n.length > keepTrackOfLen){
+    for(var i = 0; i <= keepTrackOfLen; i++){
+      var tempList = [];
+      tempList[i] = keepTrackOfLen;
+    }
+    keepTrackOfLen++;
+  }
 };
+var output = PascalTriangle(4);
+console.log(output);
