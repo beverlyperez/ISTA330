@@ -27,5 +27,4 @@ var maxMinusMin = function(n) {
      var differenceMaxMin = maxInN - minInN;
     return differenceMaxMin;
 };   
-var output = maxMinusMin(87034);
- console.log(output);
+
