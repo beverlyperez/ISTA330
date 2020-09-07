@@ -12,5 +12,23 @@ output: 2
 */
 
 var m_element = function(input) {
-    
+    var mEle = input.length/2;
+    var keepTrack = 0;
+    var returnVal = undefined;
+    for(var i = 0; i < input.length; i++){
+        for(var j = 0; j < input.length; j++){
+            if(i != j){
+                if(input[i] == input[j]){
+                    keepTrack++
+                }
+            }
+        }
+        if(mEle < keepTrack){
+            returnVal = input[i];
+        }
+    }
+
+    return returnVal;
 };
+//var output = m_element([1, 2, 2, 3, 2, 7, 2]);
+//console.log(output);
