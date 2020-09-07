@@ -14,7 +14,7 @@ output: 2
 var m_element = function(input) {
     var mEle = input.length/2;
     var keepTrack = 0;
-    var returnVal = undefined;
+    var returnVal = -1;
     for(var i = 0; i < input.length; i++){
         for(var j = 0; j < input.length; j++){
             if(i != j){
