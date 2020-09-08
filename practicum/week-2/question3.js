@@ -14,11 +14,9 @@ output: [
 
 var PascalTriangle = function(n) {
   var finalTri = [];
-  var keepTrackOfLen = 0;
-  
+    
   finalTri[0] = [1];
   finalTri[1] = [1, 1];
-  console.log(finalTri);
 
   for(var i = 2; i < n; i++){
     var tempList = [];
@@ -31,11 +29,8 @@ var PascalTriangle = function(n) {
       }
     }
     finalTri[i] = tempList;
-    console.log(finalTri);
 
     
   }
   return finalTri;
 };
-var output = PascalTriangle(4);
-console.log(output);
