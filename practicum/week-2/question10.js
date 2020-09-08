@@ -65,5 +65,3 @@ var minPairs = function(input) {
     
     return finalList;
 };
-var output = minPairs([17,-5,-1,24,29,54,1]);
-console.log(output);
