@@ -24,8 +24,8 @@ var transpose = function(M) {
         for(var j = 0; j < M[i].length; j++){
             finalList[keepTrack][insideLen] = M[i][j];
             keepTrack++;
-
-            if(keepTrack == 3){
+            
+            if(keepTrack == M[i].length){
                 insideLen++;
             }
         }
@@ -34,3 +34,4 @@ var transpose = function(M) {
 
     return finalList;
 };
+
