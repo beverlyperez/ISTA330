@@ -16,5 +16,54 @@ output: [[-5, -4], [23, 24]]
 */
 
 var minPairs = function(input) {
+    var findMinDiff;
+    var finalList = [];
+    var keepTrack = 0;
+    for(var i = 0; i < input.length; i++){
+        for(var j = 0; j < input.length; j++){
+            if(i != j){
+                if(findMinDiff == undefined){
+                    findMinDiff = input[i] - input[j];
+                }
+                //make a separate one for findmindiff == math.abs to create a new list to add to finalList[keepTrack]
+                if(findMinDiff > Math.abs(input[i] - input[j])){
+                    findMinDiff = Math.abs(input[i] - input[j]);
+                    
+                }
+            
 
+
+            }
+        }
+    }
+    for(var i = 0; i < input.length; i++){
+        for(var j = i; j < input.length; j++){
+            if(i != j){
+               
+                if(findMinDiff == Math.abs(input[i] - input[j])){
+
+                    
+                    if(input[i] - input[j] == findMinDiff){
+                        if(input[j] < input[i]){
+                            finalList[keepTrack] = [input[j], input[i]];
+
+                        }
+                    }
+                    if(input[j] - input[i] == findMinDiff){
+                        if(input[i] < input[j]){
+                            finalList[keepTrack] = [input[i], input[j]];
+
+                        }
+                    }
+                    keepTrack++;
+                }
+
+
+            }
+        }
+    }
+    
+    return finalList;
 };
+var output = minPairs([17,-5,-1,24,29,54,1]);
+console.log(output);
