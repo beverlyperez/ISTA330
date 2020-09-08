@@ -9,5 +9,19 @@ Given n, calculate F(n).
 */
 
 var F = function(n) {
-//recursion
+    var nextSum = 0;
+    var before1 = 0;
+    var before2 = 0;
+    for(var i = 0; i <= n; i++){
+        if(i < 2){
+            before2 = i;
+        }
+        else{
+            nextSum = before1 + before2;
+            before1 = before2;
+            before2 = nextSum;
+        }
+    }
+    return nextSum;
+
 };
