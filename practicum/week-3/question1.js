@@ -19,5 +19,5 @@ Return the number of teams you can form given the conditions. (soldiers can be p
 */
 
 var howManyTeams = function(input) {
-   
+   return 1;
 };
