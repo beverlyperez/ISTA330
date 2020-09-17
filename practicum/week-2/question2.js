@@ -10,6 +10,24 @@ Example: input: [-12,3,-1,5,-2,1,-7]
           */
 
  var largestSubarray = function(input) {
-     
+     var maxSum = 0; 
+     var curSum; 
+     for(var i = 0; i < input.length; i++){
+             curSum = input[i];
+             if(curSum > maxSum){
+                maxSum = curSum;
+                console.log(maxSum);
+             }
+             for(var j = i; j < input.length; j++){
+                     curSum += input[j];
+                     if(curSum > maxSum){
+                             maxSum = curSum;
+                             console.log(maxSum + "this is on the second if");
+                     }
+             }
+     }
+     return maxSum;
     
  };
+var output = largestSubarray([-12,3,-1,5,-2,1,-7]);
+console.log(output);
