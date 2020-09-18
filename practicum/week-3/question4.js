@@ -17,14 +17,6 @@ Example:
   [1,2,3]
 ]
 */
-function isDuplicate(list, check){
-  for(var i = 0; i < list.length; i++){
-    if(list[i] == check){
-      return true;
-    }
-  }
-  return false;
-}
 
 var powerSet = function(input) {
   var output = [[]];

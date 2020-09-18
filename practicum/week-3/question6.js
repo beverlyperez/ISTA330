@@ -23,7 +23,26 @@ output:  4
      A[A[A[A[0]]]] = A[2] = 0
      but A[A[A[A[A[0]]]]] = A[0] = 5 which is a duplicate.
 */
-
+function noDuplicate(list, check){
+     for(var i = 0; i < list.length; i++){
+       if(list[i] == check){
+         return false;
+       }
+     }
+     return true;
+   }
 var longestNested = function(A) {
+     var noNested = true;
+     var keepTrack = 0;
+     var i = 0;
+     var keepTrackList = [];
+     while(noNested == true){
+          noNested = noDuplicate(keepTrackList, A[i]);
 
+          keepTrackList[keepTrack] = A[i];
+          
+          keepTrack++;
+          i = A[i];
+     }
+     return keepTrack - 1;
 };
