@@ -18,8 +18,17 @@ var d_count = function(input1, input2, d) {
     var tOfF = false;
     for(var i = 0; i < input1.length; i++){
         for(var j = 0; j < input2.length; j++){
-            
-            if( Math.abs(input1[i] - input2[j]) > Number(d) ){
+            var absoluteVal = 0;
+
+            if(input1[i] > input2[j]){
+                absoluteVal = input1[i] - input2[j];
+            }
+
+            else if (input2[j] > input1[i]){
+                absoluteVal = input2[j] - input1[i];
+
+            }
+            if( absoluteVal > d){
                 tOfF = true;
             }
             else{
@@ -34,5 +43,3 @@ var d_count = function(input1, input2, d) {
     }
     return dCount;
 };
-var output = d_count([2,1,26,3], [-5,-2,10,-3,7], 6);
-console.log(output);
