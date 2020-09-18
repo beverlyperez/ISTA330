@@ -88,15 +88,27 @@ var romanToInteger = function(s) {
 
             }
         }
-        else{
+        else if(s[i] == 'V'){
+            retInt += romanObj.V;
+
             
-            var key = s[i];
-            retInt += romanObj.key;
+        }else if(s[i] == 'L'){
+            retInt += romanObj.L;
+
+            
+        }else if(s[i] == 'D'){
+            retInt += romanObj.D;
+
+            
+        }else if(s[i] == 'M'){
+            retInt += romanObj.M;
+
+            
         }
         
         
     }
     return retInt;
 };
-//var output = romanToInteger("IV");
-//console.log(output + "the output");
+var output = romanToInteger("MCMXCIV");
+console.log(output + "the output");

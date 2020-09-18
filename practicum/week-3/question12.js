@@ -12,31 +12,39 @@ Example:
 function alreadVisited(diffPlaces, list){
     for(var i = 0; i < diffPlaces.length; i++){
         if(list == diffPlaces[i]){
+            console.log(list + "the liiiiist");
             return true;
         }
     }
     return false;
 }
 var isCrossing = function(s) {
-    var compass = {N: 1, S: -1, E:-1, W:1};
+    var compass = {N: 1, S: -1, E:1, W:-1};
     var x = 0; 
     var y = 0;
     var diffPlaces = [];
     var visited = false;
     var keepTrack = 0;
+    var temp = [];
     for(var i = 0; i < s.length; i++){
-        var key = s[i];
-        console.log(key + "this is the key")
-        if(s[i] == 'N' || s[i] == 'S'){
-            console.log(compass.key);
-             x = x + compass.key;
+        
+        if(s[i] == 'N'){
+             x = x + compass.N;
         }
-        else if(s[i] == 'E' || s[i] == 'W'){
-            y = y + compass.key;
+        else if(s[i] == 'S'){
+            x = x + compass.S;
+        }
+        else if(s[i] == 'E'){
+            y = y + compass.E;
+        }
+        else if(s[i] == 'W'){
+            x = x + compass.W;
         }
         console.log(x + " = x");
-        var temp = [x, y];
-        visited = alreadVisited(diffPlaces, [x, y]);
+        temp[0] = x;
+        temp[1] = y;
+        
+        visited = alreadVisited(diffPlaces, temp);
         if(visited) {
             return true;
         }
