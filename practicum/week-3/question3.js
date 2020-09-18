@@ -26,5 +26,3 @@ var kStepAway = function(input, k) {
     }
     return true;
 };
-var output = kStepAway([1,0,0,0,1,0,0,1], 2);
-console.log(output + "   this is output");
