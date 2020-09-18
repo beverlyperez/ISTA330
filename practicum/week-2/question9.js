@@ -25,9 +25,7 @@ var largestGroupsCount = function(n) {
     var keepTrackForkeepTrack = 0;
     var keepTrack = 1;
     var maxLen = 0;
-    for(var j = 0; j < 9; j++){
-        finalList[j] = [];
-    }
+    
     for(var i = 0; i < n; i++){
 
         if(i >= 9){
