@@ -93,6 +93,3 @@ var minMoves = function(A) {
     }
     return minM;
 };
-
-var output = minMoves([1,2,2]);
-console.log(output);
