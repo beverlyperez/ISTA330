@@ -22,9 +22,6 @@ var largestGroupsCount = function(n) {
     }
     for(var i = 0; i < n; i++){
 
-        
-       // console.log(finalList);
-
         if(i >= 9){
             finalList[i - 9][keepTrack] = i + 1;
             keepTrackForkeepTrack++;
@@ -35,7 +32,7 @@ var largestGroupsCount = function(n) {
             
         }
         else{
-            finalList[i][0] = i + 1;
+            finalList[i] = [i + 1];
         }
         
 
@@ -54,3 +51,5 @@ var largestGroupsCount = function(n) {
     }
     return lensOfMax;
 };
+var output = largestGroupsCount(11);
+console.log(output);
