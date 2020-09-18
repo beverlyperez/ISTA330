@@ -32,5 +32,3 @@ Example: input: [19,3,2,10,8,2,3,5]
      return duplicateList;
     
  };
- var output = findDuplicates([19,3,2,10,8,2,3,5]);
- console.log(output + "   this is output");
