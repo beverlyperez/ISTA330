@@ -10,19 +10,22 @@ output: true
 
 var kStepAway = function(input, k) {
     var placeKeeper = 0;
+    var checking = 0;
     var flag = false;
     for(var i = 0; i < input.length; i++){
+        if(input[i] == 1){
 
-        if(input[i] == 1 && placeKeeper == 0){
+            if(i != 0 && checking < k){
+                return false;
+            }
+            checking = 0;
+        }
+        else if(input[i] == 0){
+            checking++;
+        }
 
-            placeKeeper = i;
-        }
-        else if(input[i] == 1 && (placeKeeper + k + 1) < i){
-            return false;
-        }
-        else if(input[i] == 1 && (placeKeeper + k + 1) >= i){
-            placeKeeper = i;
-        }
     }
     return true;
 };
+var output = kStepAway([1,0,0,0,1,0,0,1], 2);
+console.log(output);
