@@ -19,15 +19,30 @@ var minPairs = function(input) {
     var findMinDiff;
     var finalList = [];
     var keepTrack = 0;
+    console.log(input.length);
+
     for(var i = 0; i < input.length; i++){
+        console.log(input.length);
         for(var j = 0; j < input.length; j++){
+
             if(i != j){
+
                 if(findMinDiff == undefined){
+
                     findMinDiff = input[i] - input[j];
                 }
                 //make a separate one for findmindiff == math.abs to create a new list to add to finalList[keepTrack]
-                if(findMinDiff > Math.abs(input[i] - input[j])){
-                    findMinDiff = Math.abs(input[i] - input[j]);
+                var absoluteVal = 0;
+                if(input[i] > input[j]){
+                   absoluteVal = input[i] - input[j];
+                }
+                else if(input[j] > input[i]){
+                absoluteVal = input[j] - input[i];
+                }
+
+                if(findMinDiff > absoluteVal){
+
+                    findMinDiff = absoluteVal;
                     
                 }
             
@@ -36,21 +51,34 @@ var minPairs = function(input) {
             }
         }
     }
+
     for(var i = 0; i < input.length; i++){
+
         for(var j = i; j < input.length; j++){
+
             if(i != j){
-               
-                if(findMinDiff == Math.abs(input[i] - input[j])){
+               var absoluteVal = 0;
+                if(input[i] > input[j]){
+                   absoluteVal = input[i] - input[j];
+                }
+                else if(input[j] > input[i]){
+                absoluteVal = input[j] - input[i];
+                }
+                if(findMinDiff == absoluteVal){
 
                     
                     if(input[i] - input[j] == findMinDiff){
+                        
                         if(input[j] < input[i]){
+
                             finalList[keepTrack] = [input[j], input[i]];
 
                         }
                     }
                     if(input[j] - input[i] == findMinDiff){
+
                         if(input[i] < input[j]){
+                            
                             finalList[keepTrack] = [input[i], input[j]];
 
                         }
@@ -65,3 +93,5 @@ var minPairs = function(input) {
     
     return finalList;
 };
+var output = minPairs([1,-5,-10,24,19,-4,-14,23]);
+console.log(output);
