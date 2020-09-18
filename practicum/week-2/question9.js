@@ -11,6 +11,14 @@ output: 2
 The groups are: [1, 10], [2, 11], [3], [4], [5], [6], [7], [8], [9]
 so there are two groups with the largest size.
 */
+function findAbs(a, b){
+    if(a > b){
+        return a - b;
+    }
+    else{
+        return b - a;
+    }
+}
 
 var largestGroupsCount = function(n) {
     var finalList = [];
@@ -23,7 +31,7 @@ var largestGroupsCount = function(n) {
     for(var i = 0; i < n; i++){
 
         if(i >= 9){
-            finalList[i - 9][keepTrack] = i + 1;
+            finalList[findAbs(i, 9)][keepTrack] = i + 1;
             keepTrackForkeepTrack++;
             if(keepTrackForkeepTrack == 9){
                 keepTrack++;
