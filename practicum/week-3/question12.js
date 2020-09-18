@@ -9,7 +9,44 @@ Example:
     input: "NESSESW"
     output: false
 */
-
+function alreadVisited(diffPlaces, list){
+    for(var i = 0; i < diffPlaces.length; i++){
+        if(list == diffPlaces[i]){
+            return true;
+        }
+    }
+    return false;
+}
 var isCrossing = function(s) {
-
+    var compass = {N: 1, S: -1, E:-1, W:1};
+    var x = 0; 
+    var y = 0;
+    var diffPlaces = [];
+    var visited = false;
+    var keepTrack = 0;
+    for(var i = 0; i < s.length; i++){
+        var key = s[i];
+        console.log(key + "this is the key")
+        if(s[i] == 'N' || s[i] == 'S'){
+            console.log(compass.key);
+             x = x + compass.key;
+        }
+        else if(s[i] == 'E' || s[i] == 'W'){
+            y = y + compass.key;
+        }
+        console.log(x + " = x");
+        var temp = [x, y];
+        visited = alreadVisited(diffPlaces, [x, y]);
+        if(visited) {
+            return true;
+        }
+        else{
+            console.log(diffPlaces);
+            diffPlaces[keepTrack] = [x, y];
+            keepTrack++;
+        }
+    }
+    return false;
 };
+var output = isCrossing("NESWW");
+console.log(output);

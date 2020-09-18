@@ -35,5 +35,68 @@ output: 4
 */
 
 var romanToInteger = function(s) {
+    var romanObj = {I: 1, V: 5, X:10, L:50, C:100, D:500, M:1000};
+    var retInt = 0;
+    for(var i = 0; i <= s.length-1; i++){
+        console.log(s[0]);
+        if(s[i] == 'X'){
+            if(s[i+1] == 'L'){
+                retInt += romanObj.L - romanObj.X;
+                i++;
 
+            }
+            else if(s[i+1] == 'C'){
+                retInt += romanObj.C - romanObj.X;
+                i++;
+
+            }
+            else{
+                retInt += romanObj.X;
+            }
+        }
+        else if(s[i] == 'I'){
+            if(s[i+1] == 'V'){
+
+                retInt += romanObj.V - romanObj.I;
+                i++;
+            }
+            else if(s[i+1] == 'X'){
+                retInt += romanObj.X - romanObj.I;
+                i++;
+
+            }
+            else{
+                retInt += romanObj.I;
+
+            }
+        }
+        
+        else if(s[i] == 'C'){
+
+            if(s[i+1] == 'D'){
+                retInt += romanObj.D - romanObj.C;
+                i++;
+
+            }
+            else if(s[i+1] == 'M'){
+                retInt += romanObj.M - romanObj.C;
+                i++;
+
+            }
+            else{
+                retInt += romanObj.C;
+
+            }
+        }
+        else{
+            
+            var key = s[i];
+            retInt += romanObj.key;
+        }
+        
+        
+    }
+    return retInt;
 };
+//var output = romanToInteger("IV");
+//console.log(output + "the output");

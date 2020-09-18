@@ -31,5 +31,5 @@ var isPalindrome = function(s) {
     }
     return true;
 };
-var output = isPalindrome('Was it a car or a ca');
-console.log(output);
+//var output = isPalindrome('Was it a car or a cat I saw');
+//console.log(output);
