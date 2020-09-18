@@ -11,7 +11,31 @@ Example:
 input:  [2,0,2,1,1,0]
 output: [0,0,1,1,2,2]
 */
-
+function isSorted(list){
+    for(var i = 0; i < list.length - 1; i++){
+        if(list[i] > list[i + 1]){
+            return false;
+        }
+    }
+    return true;
+}
 var sortColors = function(input) {
-
+    var outputList = input;
+    var isItSorted = false;
+    var i = 0;
+    while(isItSorted == false){
+        if(outputList[i] > outputList[i+1]){
+            var temp = outputList[i];
+            outputList[i] = outputList[i + 1];
+            outputList[i + 1] = temp;
+        }
+        if(i == input.length - 1){
+         isItSorted = isSorted(outputList);
+         i = 0;
+        }
+        i++;
+    }
+    return outputList;
 };
+var output = sortColors([2,0,2,1,1,0]);
+console.log(output);
