@@ -12,19 +12,19 @@ Example:
 function alreadVisited(diffPlaces, list){
     for(var i = 0; i < diffPlaces.length; i++){
         if(list == diffPlaces[i]){
-            console.log(list + "the liiiiist");
             return true;
         }
     }
+
     return false;
 }
 var isCrossing = function(s) {
     var compass = {N: 1, S: -1, E:1, W:-1};
     var x = 0; 
     var y = 0;
-    var diffPlaces = [];
-    var visited = false;
-    var keepTrack = 0;
+    var diffPlaces = [[0,0]];
+    var notvisited = false;
+    var keepTrack = 1;
     var temp = [];
     for(var i = 0; i < s.length; i++){
         
@@ -40,12 +40,11 @@ var isCrossing = function(s) {
         else if(s[i] == 'W'){
             x = x + compass.W;
         }
-        console.log(x + " = x");
         temp[0] = x;
         temp[1] = y;
-        
-        visited = alreadVisited(diffPlaces, temp);
-        if(visited) {
+
+        notvisited = alreadVisited(diffPlaces, temp);
+        if(!notvisited) {
             return true;
         }
         else{
@@ -56,5 +55,5 @@ var isCrossing = function(s) {
     }
     return false;
 };
-var output = isCrossing("NESWW");
-console.log(output);
+//var output = isCrossing("NESWW");
+//console.log(output);
