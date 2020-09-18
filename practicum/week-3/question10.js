@@ -11,5 +11,25 @@ output: true
 */
 
 var isPalindrome = function(s) {
-
+    var flag = true;
+    var newString = '';
+    for(var j = 0; j < s.length; j++){
+        if(s[j] != ' '){
+            newString += s[j];
+        }
+    }
+    newString = newString.toLowerCase();
+    for(var i = 0; i < newString.length; i++){
+        
+            if(newString[i] == newString[newString.length - i - 1]){
+                flag = true;
+            }
+            else{
+                return false;
+            }
+        
+    }
+    return true;
 };
+var output = isPalindrome('Was it a car or a ca');
+console.log(output);
