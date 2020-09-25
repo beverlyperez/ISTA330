@@ -139,7 +139,7 @@
                     if(keepTrack == sorted.length){
                         keepTrack = 0;
                     }
-                    newString += '<td><img src="images/' + flowers[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + flowers[keepTrack].name + '</div></td>';
+                    newString += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
                     keepTrack++;
                 }
                 newString += "</tr>";
