@@ -132,7 +132,7 @@
         function sortByPicFunc(elem, startingPoint){
             let keepTrack = startingPoint;
             let newString = "<table>";
-
+            
             for(var i = 0; i < 2; i++){
                 newString += "<tr>";
                 for(var j = 0; j < 4; j++){
@@ -141,7 +141,7 @@
                     }
 
                     console.log(sorted[keepTrack].name + "where keep track = " + keepTrack)
-                    newString += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
+                    newString += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc(this,'+ keepTrack+')"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
                     keepTrack++;
                 }
                 newString += "</tr>";
