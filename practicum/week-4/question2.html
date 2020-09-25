@@ -139,6 +139,7 @@
                     if(keepTrack == sorted.length){
                         keepTrack = 0;
                     }
+                    console.log(sorted[keepTrack].name)
                     newString += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
                     keepTrack++;
                 }
