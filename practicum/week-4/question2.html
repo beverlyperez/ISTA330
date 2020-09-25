@@ -100,6 +100,61 @@
             rose,
             waterlily
         ];
+        function sort(arr) {
+            //Selection sort
+            for (var i = 0; i < str.length; i++) {
+                for(var j = i + 1; j < str.length - 1; j++) {   
+                    if (arr[i].name > arr[j].name) {
+                        temp = arr[i].name;
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var sorted = sort(flowers);
+
+        let stringInDiv = "<table>";
+        let keepTrack = 0;
+        for(var i = 0; i < 2; i++){
+            stringInDiv += "<tr>";
+            for(var j = 0; j < 4; j++){
+                stringInDiv += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc(' + sorted[keepTrack] + ')"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
+                keepTrack = keepTrack + 1;
+            }
+            stringInDiv += "</tr>";
+        }
+        stringInDiv += "</table>";
+        document.getElementById("flowersDiv").innerHTML = stringInDiv;
+
+        function sortByPicFunc(nameOfFLower){
+            let keepTrack = 0;
+
+            for(var index = 0; index < sorted.length; index++){
+                if(sorted[index] == nameOfFLower){
+                    keepTrack = index;
+                }
+            }
+            var newString = "";
+            let stringInDiv = "<table>";
+
+            for(var i = 0; i < 2; i++){
+                stringInDiv += "<tr>";
+                for(var j = 0; j < 4; j++){
+                    if(keepTrack == sorted.length){
+                        keepTrack = 0;
+                    }
+                    stringInDiv += '<td><img src="images/' + flowers[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + flowers[keepTrack].name + '</div></td>';
+                    keepTrack++;
+                }
+                stringInDiv += "</tr>";
+            }
+            stringInDiv += "</table>";
+
+            document.getElementById("flowersDiv").innerHTML = stringInDiv;
+
+        }
     </script>
 </body>
 
