@@ -106,7 +106,7 @@
                 for(var j = i + 1; j < arr.length - 1; j++) {   
                     if (arr[i].name > arr[j].name) {
                         temp = arr[i].name;
-                        arr[i] = arr[j];
+                        arr[i] = arr[j].name;
                         arr[j] = temp;
                     }
                 }
@@ -122,7 +122,7 @@
             for(var j = 0; j < 4; j++){
 
                 stringInDiv += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc(' + sorted[keepTrack] + ')"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
-                keepTrack = keepTrack + 1;
+                keepTrack++;
             }
             stringInDiv += "</tr>";
         }
