@@ -121,7 +121,7 @@
             stringInDiv += "<tr>";
             for(var j = 0; j < 4; j++){
 
-                stringInDiv += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc(' + sorted[keepTrack] + ')"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
+                stringInDiv += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc(this,'+ keepTrack+')"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
                 keepTrack++;
             }
             stringInDiv += "</tr>";
@@ -129,31 +129,25 @@
         stringInDiv += "</table>";
         document.getElementById("flowersDiv").innerHTML = stringInDiv;
 
-        function sortByPicFunc(nameOfFLower){
-            let keepTrack = 0;
-
-            for(var index = 0; index < sorted.length; index++){
-                if(sorted[index] == nameOfFLower){
-                    keepTrack = index;
-                }
-            }
+        function sortByPicFunc(elem, startingPoint){
+            let keepTrack = startingPoint;
             var newString = "";
-            let stringInDiv = "<table>";
+            let newString = "<table>";
 
             for(var i = 0; i < 2; i++){
-                stringInDiv += "<tr>";
+                newString += "<tr>";
                 for(var j = 0; j < 4; j++){
                     if(keepTrack == sorted.length){
                         keepTrack = 0;
                     }
-                    stringInDiv += '<td><img src="images/' + flowers[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + flowers[keepTrack].name + '</div></td>';
+                    newString += '<td><img src="images/' + flowers[keepTrack].picture + '" onclick="sortByPicFunc()"><div style="text-align: center;">' + flowers[keepTrack].name + '</div></td>';
                     keepTrack++;
                 }
-                stringInDiv += "</tr>";
+                newString += "</tr>";
             }
-            stringInDiv += "</table>";
+            newString += "</table>";
 
-            document.getElementById("flowersDiv").innerHTML = stringInDiv;
+            document.getElementById("flowersDiv").innerHTML = newString;
 
         }
     </script>
