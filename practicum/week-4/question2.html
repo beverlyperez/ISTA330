@@ -114,12 +114,13 @@
             return arr;
         }
         var sorted = sort(flowers);
-
+        console.log(sorted);
         let stringInDiv = "<table>";
         let keepTrack = 0;
         for(var i = 0; i < 2; i++){
             stringInDiv += "<tr>";
             for(var j = 0; j < 4; j++){
+
                 stringInDiv += '<td><img src="images/' + sorted[keepTrack].picture + '" onclick="sortByPicFunc(' + sorted[keepTrack] + ')"><div style="text-align: center;">' + sorted[keepTrack].name + '</div></td>';
                 keepTrack = keepTrack + 1;
             }
