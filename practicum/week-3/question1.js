@@ -42,14 +42,19 @@ var howManyTeams = function(input) {
         var keepTrack = 0;
         var count = 0;
         var minNum;
-        var runThrough = 0;
         var j = 1;
         var numToAdd = 1;
         var maxNum = findMax(input);
+        var runThrough = 0;
+        console.log(maxNum + " = max Num")
         for (var i = 0; i < input.length - 3; i++){
+                console.log(tempList + " = tempList");
+
                 tempList[keepTrack] = input[i];
                 keepTrack++;
                 minNum = input[i];
+
+                console.log(minNum + " = minNum");
 
                 while(runThrough != 2){
                       
@@ -58,14 +63,21 @@ var howManyTeams = function(input) {
                                 numToAdd = 0;
 
                         }
+
                         if(input[j] == (tempList[keepTrack - 1] + numToAdd)){
+                                console.log(input[j]+ "input at j = "+ j);
                                 tempList[keepTrack] = input[j];
                                 keepTrack++;
                                 j++;
                                 runThrough++;
                                 
                         }
+                        else if((tempList[keepTrack - 1] + numToAdd) > maxNum){
+                                runThrough = 2;
+                        }
                         else{
+                                console.log(numToAdd + "num to add to compare");
+
                                 numToAdd++;
                         }
                 }
@@ -77,5 +89,5 @@ var howManyTeams = function(input) {
         return count;
 };
 
-//var output = howManyTeams([2,5,3,4,1]);
-//console.log(output + "   this is output");
+var output = howManyTeams([2,5,3,4,1,6]);
+console.log(output + "   this is output");
