@@ -24,6 +24,9 @@ var isPalindrome = function(s) {
             if(newString[i] == newString[newString.length - i - 1]){
                 flag = true;
             }
+            else if(newString[i]){
+
+            }
             else{
                 return false;
             }
@@ -31,5 +34,5 @@ var isPalindrome = function(s) {
     }
     return true;
 };
-//var output = isPalindrome('Was it a car or a cat I saw');
-//console.log(output);
+var output = isPalindrome('A man, a plan, a canal – Panama');
+console.log(output);
