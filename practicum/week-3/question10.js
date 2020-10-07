@@ -13,20 +13,22 @@ output: true
 var isPalindrome = function(s) {
     var flag = true;
     var newString = '';
-    for(var j = 0; j < s.length; j++){
-        if(s[j] != ' '){
-            newString += s[j];
+    var sString = s.replace(/[^\w\s]|_/g, "");
+    console.log(newString);
+    for(var j = 0; j < sString.length; j++){
+        if(sString[j] != ' '){
+            newString += sString[j];
         }
     }
+    console.log(newString);
+
     newString = newString.toLowerCase();
     for(var i = 0; i < newString.length; i++){
         
             if(newString[i] == newString[newString.length - i - 1]){
                 flag = true;
             }
-            else if(newString[i]){
-
-            }
+           
             else{
                 return false;
             }
@@ -34,5 +36,3 @@ var isPalindrome = function(s) {
     }
     return true;
 };
-var output = isPalindrome('A man, a plan, a canal – Panama');
-console.log(output);
